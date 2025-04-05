@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wellness Check-in</title>
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            display: flex;
+            min-height: 100vh;
+            background-color: orange;
+            color: white;
+        }
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            background-color: #343a40;
+            padding: 20px;
+            position: fixed;
+        }
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        .sidebar a:hover {
+            background-color: #495057;
+        }
+        .content {
+            margin-left: 260px;
+            padding: 20px;
+            width: 100%;
+        }
+        .navbar {
+            background-color: #007bff;
+            padding: 10px 20px;
+            color: white;
+        }
+        .card {
+            background-color: #ff944d;
+            border: none;
+            color: white;
+        }
+        .btn-checkin {
+            background-color: #ffcc80;
+            border: none;
+            color: #333;
+        }
+        .btn-checkin:hover {
+            background-color: #ffb84d;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h4>Dashboard</h4>
+        <hr>
+        <a href="dashboard"><i class="fas fa-home"></i> Home</a>
+        <a href="profile"><i class="fas fa-user"></i> Assignment</a>
+        <a href="#"><i class="fas fa-heartbeat"></i> Wellness</a>
+        <a href="#"><i class="fas fa-cogs"></i> Settings</a>
+        <a href="students_system/logout" class="text-danger"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        <div class="navbar">
+            <h5>Welcome, {{ user.username }}</h5>
+        </div>
+
+        <div class="container mt-4">
+            <h2>Wellness Check-in</h2>
+            <p>Track how you're feeling and take a quick self-care break.</p>
+
+            <div class="row g-4">
+                <!-- Mood Tracker -->
+                <div class="col-md-4">
+                    <div class="card p-3 text-center shadow">
+                        <h5>How are you feeling today?</h5>
+                        <div class="d-flex justify-content-center gap-3 my-3">
+                            <button class="btn btn-checkin">😊 Good</button>
+                            <button class="btn btn-checkin">😐 Okay</button>
+                            <button class="btn btn-checkin">😞 Stressed</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Breathing Exercise -->
+                <div class="col-md-4">
+                    <div class="card p-3 text-center shadow">
+                        <h5>Breathing Exercise</h5>
+                        <p>Take a moment to breathe deeply and relax.</p>
+                        <button class="btn btn-checkin">Start 1-Minute Breathing</button>
+                    </div>
+                </div>
+
+                <!-- Stretch Break -->
+                <div class="col-md-4">
+                    <div class="card p-3 text-center shadow">
+                        <h5>Stretch Break</h5>
+                        <p>Time for a quick stretch! Your body will thank you.</p>
+                        <button class="btn btn-checkin">Start Stretching</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
